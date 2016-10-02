@@ -5,7 +5,7 @@ Axiology
 
 ### Download
 
-    https://github.com/reidiiius/ubiquitous.git
+    git clone https://github.com/reidiiius/ubiquitous.git
 
 ---
 

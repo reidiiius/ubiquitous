@@ -6,8 +6,10 @@
 
 (newline)
 
-  (calligrapher "j6")
-  (calligrapher "k5")
+  (calligrapher "j36")
+  (calligrapher "k15")
 
 ;;  (for-each calligrapher skeleton)
+
+(newline)
 

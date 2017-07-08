@@ -14,6 +14,10 @@ command line
 
     guile -s papyrus.scm
 
+scheme interpreter
+
+    scm -f papyrus.scm
+
 ---
 
 ### Distribution

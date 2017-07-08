@@ -13,10 +13,12 @@
       (En (string-append (substring qp 20 60) (substring qp 0 20)))
       (Bn (string-append (substring qp 55 60) (substring qp 0 55)))
     )
-
-    (define serial (number->string (current-time)))
-
-    (display (string-append "\t" key-sign "-v" serial)) (newline)
+  							;; s48 (time)
+    (define serial (string-append "-v" (number->string (current-time))))
+    (define pidtag (string-append "-p" (number->string (getpid))))
+    (define uidtag (string-append "-u" (number->string (getuid))))
+    (newline)
+    (display (string-append "\t" key-sign serial pidtag uidtag)) (newline)
     (display (string-append "\t" Fn)) (newline)
     (display (string-append "\t" Cn)) (newline)
     (display (string-append "\t" Gn)) (newline)

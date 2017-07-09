@@ -1,44 +1,49 @@
 #!/usr/bin/guile -s
 !#
 
-(define (quartal-tuning qp key-sign)
+(load "scordatura.scm")
+
+(define (quartal-tuning tone-row key-sign)
 
   (let*
     (
-      (Fn (string-append (substring qp 25 60) (substring qp 0 25)))
-      (Cn (string-append (substring qp  0 60) (substring qp 0  0)))
-      (Gn (string-append (substring qp 35 60) (substring qp 0 35)))
-      (Dn (string-append (substring qp 10 60) (substring qp 0 10)))
-      (An (string-append (substring qp 45 60) (substring qp 0 45)))
-      (En (string-append (substring qp 20 60) (substring qp 0 20)))
-      (Bn (string-append (substring qp 55 60) (substring qp 0 55)))
+      (serial (string-append "-v" (number->string (current-time))))
+      (procid (string-append "-p" (number->string (getpid))))
+      (userid (string-append "-u" (number->string (getuid))))
+      (Fn (string-append (substring tone-row 25 60) (substring tone-row 0 25)))
+      (Cn (string-append (substring tone-row  0 60) (substring tone-row 0  0)))
+      (Gn (string-append (substring tone-row 35 60) (substring tone-row 0 35)))
+      (Dn (string-append (substring tone-row 10 60) (substring tone-row 0 10)))
+      (An (string-append (substring tone-row 45 60) (substring tone-row 0 45)))
+      (En (string-append (substring tone-row 20 60) (substring tone-row 0 20)))
+      (Bn (string-append (substring tone-row 55 60) (substring tone-row 0 55)))
     )
-  							;; s48 (time)
-    (define serial (string-append "-v" (number->string (current-time))))
-    (define pidtag (string-append "-p" (number->string (getpid))))
-    (define uidtag (string-append "-u" (number->string (getuid))))
-    (newline)
-    (display (string-append "\t" key-sign serial pidtag uidtag)) (newline)
-    (display (string-append "\t" Fn)) (newline)
-    (display (string-append "\t" Cn)) (newline)
-    (display (string-append "\t" Gn)) (newline)
-    (display (string-append "\t" Dn)) (newline)
-    (display (string-append "\t" An)) (newline)
-    (display (string-append "\t" En)) (newline)
-    (display (string-append "\t" Bn)) (newline)
 
+    (begin
+      (display (string-append "\t" key-sign serial procid userid "\n"))
+      (display (string-append "\t" Fn "\n"))
+      (display (string-append "\t" Cn "\n"))
+      (display (string-append "\t" Gn "\n"))
+      (display (string-append "\t" Dn "\n"))
+      (display (string-append "\t" An "\n"))
+      (display (string-append "\t" En "\n"))
+      (display (string-append "\t" Bn "\n"))
+    )
   )
 )
 
-(define get-scale 
-  (lambda (qp)
-    (cdr (assoc qp musical-scales))
+(define derive-row 
+  (lambda (key-sign)
+    (cdr (assoc key-sign musical-scales))
   )
 )
 
 (define (calligrapher key-sign)
-  (quartal-tuning (get-scale key-sign) key-sign)
-  (newline)
+  (begin
+    (newline)
+    (quartal-tuning (derive-row key-sign) key-sign)
+    (newline)
+  )
 )
 
 (define skeleton

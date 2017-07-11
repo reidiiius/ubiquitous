@@ -20,7 +20,7 @@ load interactive
 
     guile -l cardamom.scm
 
-scheme interpreter
+scheme interpreter (scm-5e5-3.2)
 
     scm -f papyrus.scm
 

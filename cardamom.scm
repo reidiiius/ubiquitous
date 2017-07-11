@@ -1,5 +1,4 @@
-#!/usr/bin/guile -s
-!#
+;; scm-5e5-3.2
 
 (load "scordatura.scm")
 

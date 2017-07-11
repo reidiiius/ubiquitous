@@ -1,9 +1,10 @@
-#!/usr/bin/guile -s
-!#
+;; guile-2.0.5
+
+(define-module (scordatura)
+  #:export (musical-scales))
 
 (define musical-scales
-  '(
-      ("z0" . "____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ")
+    '(("z0" . "____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ")
       ("j2" . "HgHg PuFe ____ ____ CuNp PbAu ____ AuPb ____ AgUr ____ FePu ")
       ("j3" . "HgSn ____ SnHg UrFe ____ PbAg ____ AuAu ____ AgPb ____ FeUr ")
       ("j5" . "PbCu ____ AuSn ____ AgHg TiFe FeTi ____ ____ SnAu ____ CuPb ")
@@ -87,6 +88,5 @@
  ("j3k56x4" . "HgTi ____ SnNp UrAu ____ ____ ____ AuUr NpSn ____ TiHg FeFe ")
  ("k1j56y7" . "____ AuUr NpSn ____ TiHg FeFe HgTi ____ SnNp UrAu ____ ____ ")
  ("k2j56y7" . "NpCu ____ ____ FePu HgHg PuFe SnTi ____ CuNp PbAu ____ ____ ")
-  )
-)
+))
 

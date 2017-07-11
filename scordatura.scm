@@ -1,5 +1,4 @@
-#!/usr/bin/guile -s
-!#
+;; gambc-4.2.8-1.1
 
 (define musical-scales
   '(
@@ -87,6 +86,5 @@
  ("j3k56x4" . "HgTi ____ SnNp UrAu ____ ____ ____ AuUr NpSn ____ TiHg FeFe ")
  ("k1j56y7" . "____ AuUr NpSn ____ TiHg FeFe HgTi ____ SnNp UrAu ____ ____ ")
  ("k2j56y7" . "NpCu ____ ____ FePu HgHg PuFe SnTi ____ CuNp PbAu ____ ____ ")
-  )
-)
+))
 

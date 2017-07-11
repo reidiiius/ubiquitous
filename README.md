@@ -9,30 +9,24 @@ Axiology
 
 ---
 
+### Scheme implementation
+
+    gambc-4.2.8-1.1
+
+---
+
 ### Usage
 command line
 
-    guile -s papyrus.scm
+- interpreter
 
-    guile -s papyrus.scm n0
+    gsi papyrus.scm | less
 
-load interactive
+- compiler
 
-    guile -l cardamom.scm
+    gsc papyrus.scm
 
-scheme interpreter
-
-    scm -f papyrus.scm
-
-    scm -f papyrus.scm n0
-
-terminal pager
-
-    scm -f papyrus.scm : | less
-
-grep filter
-
-    scm -f papyrus.scm : | grep -B1 -A8 'k5' | less
+    objdump -d papyrus.o1 > magnetite.asm
 
 ---
 

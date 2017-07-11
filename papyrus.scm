@@ -1,48 +1,12 @@
-#! /usr/bin/env guile
-!#
-;; guile-2.0.5
+;; TinyScheme 1.37-3.1
 
-(define-module (papyrus))
+(load "cardamom.scm")
 
-(add-to-load-path (dirname (current-filename)))
-(use-modules (cardamom))
+(newline)
 
-(define agglomerate
-  (lambda ()
-    (begin
-      (for-each calligrapher skeleton)
-      (newline))))
+(guitar-tuning)
 
-(define cauda-draconis
-  (lambda (thing)
-    (list-ref thing (- (length thing) 1))))
+(cello-tuning)
 
-(define bean-counter 1)
-
-(define carte-du-jour
-  (lambda (thing)
-    (if (= 0 (modulo bean-counter 7))
-        (newline)
-        (display (string-append "\t" thing)))
-    (set! bean-counter (+ bean-counter 1))))
-
-(if (equal? ":" (cauda-draconis (program-arguments)))
-  (begin
-    (newline)
-    (agglomerate)
-    (display (string-append " " (getcwd) "\n"))
-    (display " ") (system "dir"))
-  '())
-
-(define interim-catalog (member (cauda-draconis (program-arguments)) skeleton))
-
-(if interim-catalog
-  (begin
-    (newline)
-    (calligrapher (car interim-catalog))
-    (newline))
-  (begin
-    (newline)
-    (for-each carte-du-jour skeleton) (newline)
-    (newline)))
+(newline)
 

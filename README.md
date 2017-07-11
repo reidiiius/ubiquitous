@@ -12,17 +12,9 @@ Axiology
 ### Usage
 command line
 
-    guile -s papyrus.scm
+    tinyscheme -1 papyrus.scm n0
 
-    guile -s papyrus.scm n0
-
-terminal pager
-
-    guile -s papyrus.scm : | less
-
-grep filter
-
-    guile -s papyrus.scm : | grep -B1 -A8 'k5' | less
+    tinyscheme -1 papyrus.scm j36
 
 ---
 

@@ -1,7 +1,4 @@
-;; guile-2.0.5
-
-(define-module (scordatura)
-  #:export (musical-scales))
+;; scsh-0.6
 
 (define musical-scales
     '(("z0" . "____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ")

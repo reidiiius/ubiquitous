@@ -1,11 +1,13 @@
-#! /usr/bin/env guile
+#! /usr/bin/scsh -s
 !#
-;; guile-2.0.5
+;; scsh-0.6
 
-(define-module (papyrus))
+(load "./scordatura.scm")
+(load "./cardamom.scm")
 
-(add-to-load-path (dirname (current-filename)))
-(use-modules (cardamom))
+(define program-arguments
+  (lambda ()
+    (command-line)))
 
 (define agglomerate
   (lambda ()
@@ -30,8 +32,8 @@
   (begin
     (newline)
     (agglomerate)
-    (display (string-append " " (getcwd) "\n"))
-    (display " ") (system "dir"))
+    (display (string-append "\t" "Accidentals" "\n"))
+    (display " "))
   '())
 
 (define interim-catalog (member (cauda-draconis (program-arguments)) skeleton))

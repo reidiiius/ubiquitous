@@ -1,16 +1,10 @@
-;; guile-2.0.5
+;; scsh-0.6
 
-(define-module (cardamom)
-  #:export (calligrapher skeleton))
-
-(add-to-load-path (dirname (current-filename)))
-(use-modules (scordatura))
+(load "./scordatura.scm")
 
 (define (quartal-tuning tone-row key-sign)
   (let* (
-    (serial (string-append "-v" (number->string (current-time))))
-    (procid (string-append "-p" (number->string (getpid))))
-    (userid (string-append "-u" (number->string (getuid))))
+    (serial (string-append "-v" (number->string (time))))
     (Fn (string-append (substring tone-row 25 60) (substring tone-row 0 25)))
     (Cn (string-append (substring tone-row  0 60) (substring tone-row 0  0)))
     (Gn (string-append (substring tone-row 35 60) (substring tone-row 0 35)))
@@ -20,7 +14,7 @@
     (Bn (string-append (substring tone-row 55 60) (substring tone-row 0 55))))
     (begin
       (newline)
-      (display (string-append "\t" key-sign serial procid userid "\n"))
+      (display (string-append "\t" key-sign serial "\n"))
       (display (string-append "\t" Fn "\n"))
       (display (string-append "\t" Cn "\n"))
       (display (string-append "\t" Gn "\n"))

@@ -20,7 +20,7 @@
     (Bn (string-append (substring tone-row 55 60) (substring tone-row 0 55))))
     (begin
       (newline)
-      (display (string-append "\t" key-sign serial procid userid "\n"))
+      (display (string-append "\t" key-sign "-beadgcf" serial procid userid "\n"))
       (display (string-append "\t" Fn "\n"))
       (display (string-append "\t" Cn "\n"))
       (display (string-append "\t" Gn "\n"))

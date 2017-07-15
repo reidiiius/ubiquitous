@@ -30,8 +30,7 @@
   (begin
     (newline)
     (agglomerate)
-    (display (string-append " " (getcwd) "\n"))
-    (display " ") (system "dir"))
+    (display (string-append "\t" "Accidentals" "\n")))
   '())
 
 (define interim-catalog (member (cauda-draconis (program-arguments)) skeleton))

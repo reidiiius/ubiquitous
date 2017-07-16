@@ -4,6 +4,13 @@
 
 (define bean-counter 1)
 
+(define carte-du-jour
+  (lambda (thing)
+    (if (= 0 (modulo bean-counter 7))
+        (newline)
+        (display (string-append "\t" thing)))
+    (set! bean-counter (+ bean-counter 1))))
+
 (define derive-row 
   (lambda (key-sign)
     (cdr (assoc key-sign musical-scales))))

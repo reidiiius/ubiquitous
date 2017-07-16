@@ -20,6 +20,8 @@ command line
 
 - interpreter
 
+    gsi papyrus.scm n0
+
     gsi papyrus.scm | less
 
 - compiler

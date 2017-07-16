@@ -1,8 +1,9 @@
 ;; gambc-4.2.8-1.1
 
-(load "cardamom.scm")
+(define chaturanga
+  (lambda ()
+    (load "cardamom.scm")
+    (agglomerate)))
 
-(begin
-  (agglomerate)
-  (null? '()))
+(chaturanga)
 

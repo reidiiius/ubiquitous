@@ -11,7 +11,7 @@ Disassembly of section .init:
  464:	83 ec 04             	sub    $0x4,%esp
  467:	e8 00 00 00 00       	call   46c <_init+0xc>
  46c:	5b                   	pop    %ebx
- 46d:	81 c3 48 16 00 00    	add    $0x1648,%ebx
+ 46d:	81 c3 40 16 00 00    	add    $0x1640,%ebx
  473:	8b 93 f4 ff ff ff    	mov    -0xc(%ebx),%edx
  479:	85 d2                	test   %edx,%edx
  47b:	74 05                	je     482 <_init+0x22>
@@ -46,10 +46,10 @@ Disassembly of section .text:
  4c1:	89 e5                	mov    %esp,%ebp
  4c3:	53                   	push   %ebx
  4c4:	e8 12 01 00 00       	call   5db <__x86.get_pc_thunk.bx>
- 4c9:	81 c3 eb 15 00 00    	add    $0x15eb,%ebx
+ 4c9:	81 c3 e3 15 00 00    	add    $0x15e3,%ebx
  4cf:	83 ec 14             	sub    $0x14,%esp
- 4d2:	8d 83 ef 01 00 00    	lea    0x1ef(%ebx),%eax
- 4d8:	8d 93 ec 01 00 00    	lea    0x1ec(%ebx),%edx
+ 4d2:	8d 83 e7 01 00 00    	lea    0x1e7(%ebx),%eax
+ 4d8:	8d 93 e4 01 00 00    	lea    0x1e4(%ebx),%edx
  4de:	29 d0                	sub    %edx,%eax
  4e0:	83 f8 06             	cmp    $0x6,%eax
  4e3:	77 06                	ja     4eb <deregister_tm_clones+0x2b>
@@ -70,10 +70,10 @@ Disassembly of section .text:
  501:	89 e5                	mov    %esp,%ebp
  503:	53                   	push   %ebx
  504:	e8 d2 00 00 00       	call   5db <__x86.get_pc_thunk.bx>
- 509:	81 c3 ab 15 00 00    	add    $0x15ab,%ebx
+ 509:	81 c3 a3 15 00 00    	add    $0x15a3,%ebx
  50f:	83 ec 14             	sub    $0x14,%esp
- 512:	8d 83 ec 01 00 00    	lea    0x1ec(%ebx),%eax
- 518:	8d 93 ec 01 00 00    	lea    0x1ec(%ebx),%edx
+ 512:	8d 83 e4 01 00 00    	lea    0x1e4(%ebx),%eax
+ 518:	8d 93 e4 01 00 00    	lea    0x1e4(%ebx),%edx
  51e:	29 d0                	sub    %edx,%eax
  520:	c1 f8 02             	sar    $0x2,%eax
  523:	89 c1                	mov    %eax,%ecx
@@ -99,18 +99,18 @@ Disassembly of section .text:
  551:	89 e5                	mov    %esp,%ebp
  553:	53                   	push   %ebx
  554:	e8 82 00 00 00       	call   5db <__x86.get_pc_thunk.bx>
- 559:	81 c3 5b 15 00 00    	add    $0x155b,%ebx
+ 559:	81 c3 53 15 00 00    	add    $0x1553,%ebx
  55f:	83 ec 14             	sub    $0x14,%esp
- 562:	80 bb ec 01 00 00 00 	cmpb   $0x0,0x1ec(%ebx)
+ 562:	80 bb e4 01 00 00 00 	cmpb   $0x0,0x1e4(%ebx)
  569:	75 24                	jne    58f <__do_global_dtors_aux+0x3f>
  56b:	8b 83 f0 ff ff ff    	mov    -0x10(%ebx),%eax
  571:	85 c0                	test   %eax,%eax
  573:	74 0e                	je     583 <__do_global_dtors_aux+0x33>
- 575:	8b 83 2c 00 00 00    	mov    0x2c(%ebx),%eax
+ 575:	8b 83 14 00 00 00    	mov    0x14(%ebx),%eax
  57b:	89 04 24             	mov    %eax,(%esp)
  57e:	e8 1d ff ff ff       	call   4a0 <__cxa_finalize@plt>
  583:	e8 38 ff ff ff       	call   4c0 <deregister_tm_clones>
- 588:	c6 83 ec 01 00 00 01 	movb   $0x1,0x1ec(%ebx)
+ 588:	c6 83 e4 01 00 00 01 	movb   $0x1,0x1e4(%ebx)
  58f:	83 c4 14             	add    $0x14,%esp
  592:	5b                   	pop    %ebx
  593:	5d                   	pop    %ebp
@@ -123,7 +123,7 @@ Disassembly of section .text:
  5a1:	89 e5                	mov    %esp,%ebp
  5a3:	53                   	push   %ebx
  5a4:	e8 32 00 00 00       	call   5db <__x86.get_pc_thunk.bx>
- 5a9:	81 c3 0b 15 00 00    	add    $0x150b,%ebx
+ 5a9:	81 c3 03 15 00 00    	add    $0x1503,%ebx
  5af:	83 ec 14             	sub    $0x14,%esp
  5b2:	8b 93 00 ff ff ff    	mov    -0x100(%ebx),%edx
  5b8:	85 d2                	test   %edx,%edx
@@ -145,10 +145,10 @@ Disassembly of section .text:
  5df:	90                   	nop
 
 000005e0 <___init_proc>:
- 5e0:	e8 95 02 00 00       	call   87a <__x86.get_pc_thunk.cx>
- 5e5:	81 c1 cf 14 00 00    	add    $0x14cf,%ecx
- 5eb:	8b 91 04 02 00 00    	mov    0x204(%ecx),%edx
- 5f1:	8b 81 f4 01 00 00    	mov    0x1f4(%ecx),%eax
+ 5e0:	e8 8a 02 00 00       	call   86f <__x86.get_pc_thunk.cx>
+ 5e5:	81 c1 c7 14 00 00    	add    $0x14c7,%ecx
+ 5eb:	8b 91 fc 01 00 00    	mov    0x1fc(%ecx),%edx
+ 5f1:	8b 81 ec 01 00 00    	mov    0x1ec(%ecx),%eax
  5f7:	83 c2 10             	add    $0x10,%edx
  5fa:	89 10                	mov    %edx,(%eax)
  5fc:	89 50 04             	mov    %edx,0x4(%eax)
@@ -160,199 +160,192 @@ Disassembly of section .text:
  606:	57                   	push   %edi
  607:	56                   	push   %esi
  608:	53                   	push   %ebx
- 609:	83 ec 14             	sub    $0x14,%esp
- 60c:	8b 6c 24 28          	mov    0x28(%esp),%ebp
+ 609:	83 ec 18             	sub    $0x18,%esp
+ 60c:	8b 7c 24 2c          	mov    0x2c(%esp),%edi
  610:	e8 c6 ff ff ff       	call   5db <__x86.get_pc_thunk.bx>
- 615:	81 c3 9f 14 00 00    	add    $0x149f,%ebx
- 61b:	85 ed                	test   %ebp,%ebp
+ 615:	81 c3 97 14 00 00    	add    $0x1497,%ebx
+ 61b:	85 ff                	test   %edi,%edi
  61d:	75 0b                	jne    62a <___H__20_papyrus_2e_o1+0x25>
- 61f:	8d b3 2c 01 00 00    	lea    0x12c(%ebx),%esi
- 625:	e9 2a 02 00 00       	jmp    854 <___H__20_papyrus_2e_o1+0x24f>
- 62a:	8b 4d 28             	mov    0x28(%ebp),%ecx
- 62d:	8b 55 24             	mov    0x24(%ebp),%edx
- 630:	8b b3 04 02 00 00    	mov    0x204(%ebx),%esi
- 636:	8b 45 08             	mov    0x8(%ebp),%eax
- 639:	89 4c 24 10          	mov    %ecx,0x10(%esp)
- 63d:	8b 4d 38             	mov    0x38(%ebp),%ecx
- 640:	89 54 24 08          	mov    %edx,0x8(%esp)
- 644:	8b 55 34             	mov    0x34(%ebp),%edx
- 647:	89 74 24 0c          	mov    %esi,0xc(%esp)
- 64b:	89 2c 24             	mov    %ebp,(%esp)
- 64e:	8b 79 07             	mov    0x7(%ecx),%edi
- 651:	8d 8b 51 eb ff ff    	lea    -0x14af(%ebx),%ecx
- 657:	89 4c 24 04          	mov    %ecx,0x4(%esp)
- 65b:	ff e7                	jmp    *%edi
- 65d:	8b 34 24             	mov    (%esp),%esi
- 660:	83 7e 4c 00          	cmpl   $0x0,0x4c(%esi)
- 664:	74 1d                	je     683 <___H__20_papyrus_2e_o1+0x7e>
- 666:	8b 4c 24 0c          	mov    0xc(%esp),%ecx
- 66a:	89 f5                	mov    %esi,%ebp
- 66c:	83 c1 10             	add    $0x10,%ecx
- 66f:	89 4e 3c             	mov    %ecx,0x3c(%esi)
- 672:	8b 8b f0 01 00 00    	mov    0x1f0(%ebx),%ecx
- 678:	8b b1 28 01 00 00    	mov    0x128(%ecx),%esi
- 67e:	e9 ba 01 00 00       	jmp    83d <___H__20_papyrus_2e_o1+0x238>
- 683:	8b 7c 24 08          	mov    0x8(%esp),%edi
- 687:	8b 4c 24 0c          	mov    0xc(%esp),%ecx
- 68b:	8b 34 24             	mov    (%esp),%esi
- 68e:	89 78 fc             	mov    %edi,-0x4(%eax)
- 691:	8b ab 14 01 00 00    	mov    0x114(%ebx),%ebp
- 697:	83 e8 10             	sub    $0x10,%eax
- 69a:	83 c1 30             	add    $0x30,%ecx
- 69d:	3b 06                	cmp    (%esi),%eax
- 69f:	89 4c 24 08          	mov    %ecx,0x8(%esp)
- 6a3:	89 6c 24 10          	mov    %ebp,0x10(%esp)
- 6a7:	73 1d                	jae    6c6 <___H__20_papyrus_2e_o1+0xc1>
- 6a9:	8b 4c 24 0c          	mov    0xc(%esp),%ecx
- 6ad:	89 f5                	mov    %esi,%ebp
- 6af:	83 c1 20             	add    $0x20,%ecx
- 6b2:	89 4e 3c             	mov    %ecx,0x3c(%esi)
- 6b5:	8b 8b f0 01 00 00    	mov    0x1f0(%ebx),%ecx
- 6bb:	8b b1 18 01 00 00    	mov    0x118(%ecx),%esi
- 6c1:	e9 77 01 00 00       	jmp    83d <___H__20_papyrus_2e_o1+0x238>
- 6c6:	8b 3c 24             	mov    (%esp),%edi
- 6c9:	8b 8b fc 01 00 00    	mov    0x1fc(%ebx),%ecx
- 6cf:	c7 47 4c 01 00 00 00 	movl   $0x1,0x4c(%edi)
- 6d6:	8b 11                	mov    (%ecx),%edx
- 6d8:	89 d6                	mov    %edx,%esi
- 6da:	83 e6 03             	and    $0x3,%esi
- 6dd:	83 fe 01             	cmp    $0x1,%esi
- 6e0:	75 16                	jne    6f8 <___H__20_papyrus_2e_o1+0xf3>
- 6e2:	8b 7a ff             	mov    -0x1(%edx),%edi
- 6e5:	81 e7 f8 00 00 00    	and    $0xf8,%edi
- 6eb:	83 ff 70             	cmp    $0x70,%edi
- 6ee:	75 08                	jne    6f8 <___H__20_papyrus_2e_o1+0xf3>
- 6f0:	8b 72 03             	mov    0x3(%edx),%esi
- 6f3:	e9 32 01 00 00       	jmp    82a <___H__20_papyrus_2e_o1+0x225>
- 6f8:	8b 2c 24             	mov    (%esp),%ebp
- 6fb:	89 4d 48             	mov    %ecx,0x48(%ebp)
- 6fe:	8b 8b f0 01 00 00    	mov    0x1f0(%ebx),%ecx
- 704:	8b b1 24 01 00 00    	mov    0x124(%ecx),%esi
- 70a:	e9 2e 01 00 00       	jmp    83d <___H__20_papyrus_2e_o1+0x238>
- 70f:	8b 14 24             	mov    (%esp),%edx
- 712:	8b 8b f8 01 00 00    	mov    0x1f8(%ebx),%ecx
- 718:	8b 6c 24 0c          	mov    0xc(%esp),%ebp
- 71c:	c7 42 4c 00 00 00 00 	movl   $0x0,0x4c(%edx)
- 723:	8b 11                	mov    (%ecx),%edx
- 725:	83 c5 40             	add    $0x40,%ebp
- 728:	89 6c 24 08          	mov    %ebp,0x8(%esp)
- 72c:	89 d6                	mov    %edx,%esi
- 72e:	83 e6 03             	and    $0x3,%esi
- 731:	83 fe 01             	cmp    $0x1,%esi
- 734:	75 16                	jne    74c <___H__20_papyrus_2e_o1+0x147>
- 736:	8b 7a ff             	mov    -0x1(%edx),%edi
- 739:	81 e7 f8 00 00 00    	and    $0xf8,%edi
- 73f:	83 ff 70             	cmp    $0x70,%edi
- 742:	75 08                	jne    74c <___H__20_papyrus_2e_o1+0x147>
- 744:	8b 72 03             	mov    0x3(%edx),%esi
- 747:	e9 de 00 00 00       	jmp    82a <___H__20_papyrus_2e_o1+0x225>
- 74c:	8b 2c 24             	mov    (%esp),%ebp
- 74f:	89 4d 48             	mov    %ecx,0x48(%ebp)
- 752:	8b 8b f0 01 00 00    	mov    0x1f0(%ebx),%ecx
- 758:	8b b1 24 01 00 00    	mov    0x124(%ecx),%esi
- 75e:	e9 da 00 00 00       	jmp    83d <___H__20_papyrus_2e_o1+0x238>
- 763:	8b 8b 00 02 00 00    	mov    0x200(%ebx),%ecx
- 769:	8b 71 04             	mov    0x4(%ecx),%esi
- 76c:	39 31                	cmp    %esi,(%ecx)
- 76e:	75 3c                	jne    7ac <___H__20_papyrus_2e_o1+0x1a7>
- 770:	8b 3c 24             	mov    (%esp),%edi
- 773:	39 07                	cmp    %eax,(%edi)
- 775:	76 25                	jbe    79c <___H__20_papyrus_2e_o1+0x197>
- 777:	8b 4c 24 0c          	mov    0xc(%esp),%ecx
- 77b:	89 fd                	mov    %edi,%ebp
- 77d:	c7 44 24 10 fa ff ff 	movl   $0xfffffffa,0x10(%esp)
- 784:	ff 
- 785:	83 c1 50             	add    $0x50,%ecx
- 788:	89 4f 3c             	mov    %ecx,0x3c(%edi)
- 78b:	8b 8b f0 01 00 00    	mov    0x1f0(%ebx),%ecx
- 791:	8b b1 18 01 00 00    	mov    0x118(%ecx),%esi
- 797:	e9 a1 00 00 00       	jmp    83d <___H__20_papyrus_2e_o1+0x238>
- 79c:	c7 44 24 10 fa ff ff 	movl   $0xfffffffa,0x10(%esp)
- 7a3:	ff 
- 7a4:	83 c0 10             	add    $0x10,%eax
- 7a7:	8b 70 fc             	mov    -0x4(%eax),%esi
- 7aa:	eb 7e                	jmp    82a <___H__20_papyrus_2e_o1+0x225>
- 7ac:	8b 0c 24             	mov    (%esp),%ecx
- 7af:	8b 68 0c             	mov    0xc(%eax),%ebp
- 7b2:	39 01                	cmp    %eax,(%ecx)
- 7b4:	89 6c 24 08          	mov    %ebp,0x8(%esp)
- 7b8:	76 22                	jbe    7dc <___H__20_papyrus_2e_o1+0x1d7>
- 7ba:	89 cd                	mov    %ecx,%ebp
- 7bc:	8b 4c 24 0c          	mov    0xc(%esp),%ecx
- 7c0:	c7 44 24 10 f6 ff ff 	movl   $0xfffffff6,0x10(%esp)
- 7c7:	ff 
- 7c8:	83 c1 60             	add    $0x60,%ecx
- 7cb:	89 4d 3c             	mov    %ecx,0x3c(%ebp)
- 7ce:	8b 8b f0 01 00 00    	mov    0x1f0(%ebx),%ecx
- 7d4:	8b b1 18 01 00 00    	mov    0x118(%ecx),%esi
- 7da:	eb 61                	jmp    83d <___H__20_papyrus_2e_o1+0x238>
- 7dc:	c7 44 24 10 f6 ff ff 	movl   $0xfffffff6,0x10(%esp)
- 7e3:	ff 
- 7e4:	8b 34 24             	mov    (%esp),%esi
- 7e7:	83 c0 10             	add    $0x10,%eax
- 7ea:	8b 8b 00 02 00 00    	mov    0x200(%ebx),%ecx
- 7f0:	c7 46 4c 01 00 00 00 	movl   $0x1,0x4c(%esi)
- 7f7:	8b 11                	mov    (%ecx),%edx
- 7f9:	89 d6                	mov    %edx,%esi
- 7fb:	83 e6 03             	and    $0x3,%esi
- 7fe:	83 fe 01             	cmp    $0x1,%esi
- 801:	75 13                	jne    816 <___H__20_papyrus_2e_o1+0x211>
- 803:	8b 7a ff             	mov    -0x1(%edx),%edi
- 806:	81 e7 f8 00 00 00    	and    $0xf8,%edi
- 80c:	83 ff 70             	cmp    $0x70,%edi
- 80f:	75 05                	jne    816 <___H__20_papyrus_2e_o1+0x211>
- 811:	8b 72 03             	mov    0x3(%edx),%esi
- 814:	eb 14                	jmp    82a <___H__20_papyrus_2e_o1+0x225>
+ 61f:	8d 83 14 01 00 00    	lea    0x114(%ebx),%eax
+ 625:	e9 21 02 00 00       	jmp    84b <___H__20_papyrus_2e_o1+0x246>
+ 62a:	8b 47 24             	mov    0x24(%edi),%eax
+ 62d:	8b b3 fc 01 00 00    	mov    0x1fc(%ebx),%esi
+ 633:	8b 4f 28             	mov    0x28(%edi),%ecx
+ 636:	8b 6f 08             	mov    0x8(%edi),%ebp
+ 639:	89 44 24 08          	mov    %eax,0x8(%esp)
+ 63d:	8b 47 38             	mov    0x38(%edi),%eax
+ 640:	89 74 24 0c          	mov    %esi,0xc(%esp)
+ 644:	8b 57 34             	mov    0x34(%edi),%edx
+ 647:	89 4c 24 10          	mov    %ecx,0x10(%esp)
+ 64b:	8d 8b 59 eb ff ff    	lea    -0x14a7(%ebx),%ecx
+ 651:	89 4c 24 04          	mov    %ecx,0x4(%esp)
+ 655:	8b 70 07             	mov    0x7(%eax),%esi
+ 658:	8b 44 24 0c          	mov    0xc(%esp),%eax
+ 65c:	89 2c 24             	mov    %ebp,(%esp)
+ 65f:	83 c0 40             	add    $0x40,%eax
+ 662:	89 44 24 14          	mov    %eax,0x14(%esp)
+ 666:	ff e6                	jmp    *%esi
+ 668:	83 7f 4c 00          	cmpl   $0x0,0x4c(%edi)
+ 66c:	74 1e                	je     68c <___H__20_papyrus_2e_o1+0x87>
+ 66e:	8b 44 24 0c          	mov    0xc(%esp),%eax
+ 672:	8b 2c 24             	mov    (%esp),%ebp
+ 675:	83 c0 10             	add    $0x10,%eax
+ 678:	89 47 3c             	mov    %eax,0x3c(%edi)
+ 67b:	8b 83 e8 01 00 00    	mov    0x1e8(%ebx),%eax
+ 681:	8b 80 28 01 00 00    	mov    0x128(%eax),%eax
+ 687:	e9 a8 01 00 00       	jmp    834 <___H__20_papyrus_2e_o1+0x22f>
+ 68c:	8b 83 f0 01 00 00    	mov    0x1f0(%ebx),%eax
+ 692:	8b 74 24 14          	mov    0x14(%esp),%esi
+ 696:	89 30                	mov    %esi,(%eax)
+ 698:	8b 04 24             	mov    (%esp),%eax
+ 69b:	39 07                	cmp    %eax,(%edi)
+ 69d:	76 1d                	jbe    6bc <___H__20_papyrus_2e_o1+0xb7>
+ 69f:	89 c5                	mov    %eax,%ebp
+ 6a1:	8b 44 24 0c          	mov    0xc(%esp),%eax
+ 6a5:	83 c0 20             	add    $0x20,%eax
+ 6a8:	89 47 3c             	mov    %eax,0x3c(%edi)
+ 6ab:	8b 83 e8 01 00 00    	mov    0x1e8(%ebx),%eax
+ 6b1:	8b 80 18 01 00 00    	mov    0x118(%eax),%eax
+ 6b7:	e9 78 01 00 00       	jmp    834 <___H__20_papyrus_2e_o1+0x22f>
+ 6bc:	8b 83 f0 01 00 00    	mov    0x1f0(%ebx),%eax
+ 6c2:	c7 47 4c 00 00 00 00 	movl   $0x0,0x4c(%edi)
+ 6c9:	8b 10                	mov    (%eax),%edx
+ 6cb:	89 d1                	mov    %edx,%ecx
+ 6cd:	83 e1 03             	and    $0x3,%ecx
+ 6d0:	83 f9 01             	cmp    $0x1,%ecx
+ 6d3:	75 16                	jne    6eb <___H__20_papyrus_2e_o1+0xe6>
+ 6d5:	8b 72 ff             	mov    -0x1(%edx),%esi
+ 6d8:	81 e6 f8 00 00 00    	and    $0xf8,%esi
+ 6de:	83 fe 70             	cmp    $0x70,%esi
+ 6e1:	75 08                	jne    6eb <___H__20_papyrus_2e_o1+0xe6>
+ 6e3:	8b 42 03             	mov    0x3(%edx),%eax
+ 6e6:	e9 36 01 00 00       	jmp    821 <___H__20_papyrus_2e_o1+0x21c>
+ 6eb:	89 47 48             	mov    %eax,0x48(%edi)
+ 6ee:	8b 83 e8 01 00 00    	mov    0x1e8(%ebx),%eax
+ 6f4:	8b 2c 24             	mov    (%esp),%ebp
+ 6f7:	8b 80 24 01 00 00    	mov    0x124(%eax),%eax
+ 6fd:	e9 32 01 00 00       	jmp    834 <___H__20_papyrus_2e_o1+0x22f>
+ 702:	83 7f 4c 00          	cmpl   $0x0,0x4c(%edi)
+ 706:	74 1e                	je     726 <___H__20_papyrus_2e_o1+0x121>
+ 708:	8b 44 24 0c          	mov    0xc(%esp),%eax
+ 70c:	8b 2c 24             	mov    (%esp),%ebp
+ 70f:	83 c0 40             	add    $0x40,%eax
+ 712:	89 47 3c             	mov    %eax,0x3c(%edi)
+ 715:	8b 83 e8 01 00 00    	mov    0x1e8(%ebx),%eax
+ 71b:	8b 80 28 01 00 00    	mov    0x128(%eax),%eax
+ 721:	e9 0e 01 00 00       	jmp    834 <___H__20_papyrus_2e_o1+0x22f>
+ 726:	8b 0c 24             	mov    (%esp),%ecx
+ 729:	8b 74 24 08          	mov    0x8(%esp),%esi
+ 72d:	8b 44 24 0c          	mov    0xc(%esp),%eax
+ 731:	89 71 fc             	mov    %esi,-0x4(%ecx)
+ 734:	8b ab fc 00 00 00    	mov    0xfc(%ebx),%ebp
+ 73a:	83 e9 10             	sub    $0x10,%ecx
+ 73d:	83 c0 60             	add    $0x60,%eax
+ 740:	3b 0f                	cmp    (%edi),%ecx
+ 742:	89 44 24 08          	mov    %eax,0x8(%esp)
+ 746:	89 6c 24 10          	mov    %ebp,0x10(%esp)
+ 74a:	89 0c 24             	mov    %ecx,(%esp)
+ 74d:	73 1d                	jae    76c <___H__20_papyrus_2e_o1+0x167>
+ 74f:	8b 44 24 0c          	mov    0xc(%esp),%eax
+ 753:	89 cd                	mov    %ecx,%ebp
+ 755:	83 c0 50             	add    $0x50,%eax
+ 758:	89 47 3c             	mov    %eax,0x3c(%edi)
+ 75b:	8b 83 e8 01 00 00    	mov    0x1e8(%ebx),%eax
+ 761:	8b 80 18 01 00 00    	mov    0x118(%eax),%eax
+ 767:	e9 c8 00 00 00       	jmp    834 <___H__20_papyrus_2e_o1+0x22f>
+ 76c:	8b 83 f8 01 00 00    	mov    0x1f8(%ebx),%eax
+ 772:	c7 47 4c 01 00 00 00 	movl   $0x1,0x4c(%edi)
+ 779:	8b 10                	mov    (%eax),%edx
+ 77b:	89 d1                	mov    %edx,%ecx
+ 77d:	83 e1 03             	and    $0x3,%ecx
+ 780:	83 f9 01             	cmp    $0x1,%ecx
+ 783:	75 16                	jne    79b <___H__20_papyrus_2e_o1+0x196>
+ 785:	8b 72 ff             	mov    -0x1(%edx),%esi
+ 788:	81 e6 f8 00 00 00    	and    $0xf8,%esi
+ 78e:	83 fe 70             	cmp    $0x70,%esi
+ 791:	75 08                	jne    79b <___H__20_papyrus_2e_o1+0x196>
+ 793:	8b 42 03             	mov    0x3(%edx),%eax
+ 796:	e9 86 00 00 00       	jmp    821 <___H__20_papyrus_2e_o1+0x21c>
+ 79b:	89 47 48             	mov    %eax,0x48(%edi)
+ 79e:	8b 83 e8 01 00 00    	mov    0x1e8(%ebx),%eax
+ 7a4:	8b 2c 24             	mov    (%esp),%ebp
+ 7a7:	8b 80 24 01 00 00    	mov    0x124(%eax),%eax
+ 7ad:	e9 82 00 00 00       	jmp    834 <___H__20_papyrus_2e_o1+0x22f>
+ 7b2:	8b 0c 24             	mov    (%esp),%ecx
+ 7b5:	8b 34 24             	mov    (%esp),%esi
+ 7b8:	39 37                	cmp    %esi,(%edi)
+ 7ba:	8b 49 0c             	mov    0xc(%ecx),%ecx
+ 7bd:	89 4c 24 08          	mov    %ecx,0x8(%esp)
+ 7c1:	76 1a                	jbe    7dd <___H__20_papyrus_2e_o1+0x1d8>
+ 7c3:	8b 44 24 0c          	mov    0xc(%esp),%eax
+ 7c7:	89 f5                	mov    %esi,%ebp
+ 7c9:	83 c0 70             	add    $0x70,%eax
+ 7cc:	89 47 3c             	mov    %eax,0x3c(%edi)
+ 7cf:	8b 83 e8 01 00 00    	mov    0x1e8(%ebx),%eax
+ 7d5:	8b 80 18 01 00 00    	mov    0x118(%eax),%eax
+ 7db:	eb 57                	jmp    834 <___H__20_papyrus_2e_o1+0x22f>
+ 7dd:	8b 83 f4 01 00 00    	mov    0x1f4(%ebx),%eax
+ 7e3:	c7 47 4c 00 00 00 00 	movl   $0x0,0x4c(%edi)
+ 7ea:	83 04 24 10          	addl   $0x10,(%esp)
+ 7ee:	8b 10                	mov    (%eax),%edx
+ 7f0:	89 d1                	mov    %edx,%ecx
+ 7f2:	83 e1 03             	and    $0x3,%ecx
+ 7f5:	83 f9 01             	cmp    $0x1,%ecx
+ 7f8:	75 13                	jne    80d <___H__20_papyrus_2e_o1+0x208>
+ 7fa:	8b 72 ff             	mov    -0x1(%edx),%esi
+ 7fd:	81 e6 f8 00 00 00    	and    $0xf8,%esi
+ 803:	83 fe 70             	cmp    $0x70,%esi
+ 806:	75 05                	jne    80d <___H__20_papyrus_2e_o1+0x208>
+ 808:	8b 42 03             	mov    0x3(%edx),%eax
+ 80b:	eb 14                	jmp    821 <___H__20_papyrus_2e_o1+0x21c>
+ 80d:	89 47 48             	mov    %eax,0x48(%edi)
+ 810:	8b 83 e8 01 00 00    	mov    0x1e8(%ebx),%eax
  816:	8b 2c 24             	mov    (%esp),%ebp
- 819:	89 4d 48             	mov    %ecx,0x48(%ebp)
- 81c:	8b 8b f0 01 00 00    	mov    0x1f0(%ebx),%ecx
- 822:	8b b1 24 01 00 00    	mov    0x124(%ecx),%esi
- 828:	eb 13                	jmp    83d <___H__20_papyrus_2e_o1+0x238>
- 82a:	8b 6c 24 04          	mov    0x4(%esp),%ebp
- 82e:	39 6e 0b             	cmp    %ebp,0xb(%esi)
- 831:	8b 7e 07             	mov    0x7(%esi),%edi
- 834:	0f 84 21 fe ff ff    	je     65b <___H__20_papyrus_2e_o1+0x56>
- 83a:	8b 2c 24             	mov    (%esp),%ebp
- 83d:	89 45 08             	mov    %eax,0x8(%ebp)
- 840:	8b 4c 24 10          	mov    0x10(%esp),%ecx
- 844:	8b 44 24 08          	mov    0x8(%esp),%eax
- 848:	89 75 38             	mov    %esi,0x38(%ebp)
- 84b:	89 55 34             	mov    %edx,0x34(%ebp)
- 84e:	89 4d 28             	mov    %ecx,0x28(%ebp)
- 851:	89 45 24             	mov    %eax,0x24(%ebp)
- 854:	83 c4 14             	add    $0x14,%esp
- 857:	89 f0                	mov    %esi,%eax
- 859:	5b                   	pop    %ebx
- 85a:	5e                   	pop    %esi
- 85b:	5f                   	pop    %edi
- 85c:	5d                   	pop    %ebp
- 85d:	c3                   	ret    
+ 819:	8b 80 24 01 00 00    	mov    0x124(%eax),%eax
+ 81f:	eb 13                	jmp    834 <___H__20_papyrus_2e_o1+0x22f>
+ 821:	8b 6c 24 04          	mov    0x4(%esp),%ebp
+ 825:	39 68 0b             	cmp    %ebp,0xb(%eax)
+ 828:	8b 70 07             	mov    0x7(%eax),%esi
+ 82b:	0f 84 35 fe ff ff    	je     666 <___H__20_papyrus_2e_o1+0x61>
+ 831:	8b 2c 24             	mov    (%esp),%ebp
+ 834:	8b 4c 24 08          	mov    0x8(%esp),%ecx
+ 838:	8b 74 24 10          	mov    0x10(%esp),%esi
+ 83c:	89 47 38             	mov    %eax,0x38(%edi)
+ 83f:	89 6f 08             	mov    %ebp,0x8(%edi)
+ 842:	89 4f 24             	mov    %ecx,0x24(%edi)
+ 845:	89 77 28             	mov    %esi,0x28(%edi)
+ 848:	89 57 34             	mov    %edx,0x34(%edi)
+ 84b:	83 c4 18             	add    $0x18,%esp
+ 84e:	5b                   	pop    %ebx
+ 84f:	5e                   	pop    %esi
+ 850:	5f                   	pop    %edi
+ 851:	5d                   	pop    %ebp
+ 852:	c3                   	ret    
 
-0000085e <____20_papyrus_2e_o1>:
- 85e:	e8 17 00 00 00       	call   87a <__x86.get_pc_thunk.cx>
- 863:	81 c1 51 12 00 00    	add    $0x1251,%ecx
- 869:	8b 44 24 04          	mov    0x4(%esp),%eax
- 86d:	89 81 f0 01 00 00    	mov    %eax,0x1f0(%ecx)
- 873:	8d 81 8c 00 00 00    	lea    0x8c(%ecx),%eax
- 879:	c3                   	ret    
+00000853 <____20_papyrus_2e_o1>:
+ 853:	e8 17 00 00 00       	call   86f <__x86.get_pc_thunk.cx>
+ 858:	81 c1 54 12 00 00    	add    $0x1254,%ecx
+ 85e:	8b 44 24 04          	mov    0x4(%esp),%eax
+ 862:	89 81 e8 01 00 00    	mov    %eax,0x1e8(%ecx)
+ 868:	8d 81 74 00 00 00    	lea    0x74(%ecx),%eax
+ 86e:	c3                   	ret    
 
-0000087a <__x86.get_pc_thunk.cx>:
- 87a:	8b 0c 24             	mov    (%esp),%ecx
- 87d:	c3                   	ret    
- 87e:	90                   	nop
- 87f:	90                   	nop
+0000086f <__x86.get_pc_thunk.cx>:
+ 86f:	8b 0c 24             	mov    (%esp),%ecx
+ 872:	c3                   	ret    
+ 873:	90                   	nop
 
 Disassembly of section .fini:
 
-00000880 <_fini>:
- 880:	55                   	push   %ebp
- 881:	89 e5                	mov    %esp,%ebp
- 883:	53                   	push   %ebx
- 884:	83 ec 04             	sub    $0x4,%esp
- 887:	e8 00 00 00 00       	call   88c <_fini+0xc>
- 88c:	5b                   	pop    %ebx
- 88d:	81 c3 28 12 00 00    	add    $0x1228,%ebx
- 893:	59                   	pop    %ecx
- 894:	5b                   	pop    %ebx
- 895:	c9                   	leave  
- 896:	c3                   	ret    
+00000874 <_fini>:
+ 874:	55                   	push   %ebp
+ 875:	89 e5                	mov    %esp,%ebp
+ 877:	53                   	push   %ebx
+ 878:	83 ec 04             	sub    $0x4,%esp
+ 87b:	e8 00 00 00 00       	call   880 <_fini+0xc>
+ 880:	5b                   	pop    %ebx
+ 881:	81 c3 2c 12 00 00    	add    $0x122c,%ebx
+ 887:	59                   	pop    %ecx
+ 888:	5b                   	pop    %ebx
+ 889:	c9                   	leave  
+ 88a:	c3                   	ret    

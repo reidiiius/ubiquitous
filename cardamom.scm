@@ -8,9 +8,10 @@
   (lambda (key-sign)
     (cdr (assoc key-sign musical-scales))))
 
+(define serial (string-append "-v" (number->string (time->seconds (current-time)))))
+
 (define (quartal-tuning tone-row key-sign)
   (let* (
-    (serial (string-append "-v" (number->string bean-counter)))
     (Fn (string-append (substring tone-row 25 60) (substring tone-row 0 25)))
     (Cn (string-append (substring tone-row  0 60) (substring tone-row 0  0)))
     (Gn (string-append (substring tone-row 35 60) (substring tone-row 0 35)))

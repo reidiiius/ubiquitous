@@ -5,7 +5,7 @@ Axiology
 
 ### Download
 
-    git clone https://github.com/reidiiius/ubiquitous.git
+    git clone https://github.com/reidiiius/ubiquitous.git --single-branch --branch gambc-4.2.8
 
 ---
 
@@ -18,13 +18,13 @@ Axiology
 ### Usage
 command line
 
-- interpreter
+  interpreter
 
     gsi papyrus.scm n0
 
     gsi papyrus.scm | less
 
-- compiler
+  compiler
 
     gsc papyrus.scm
 

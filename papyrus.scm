@@ -23,7 +23,7 @@
   (lambda (thing)
     (if (= 0 (modulo bean-counter 7))
         (newline)
-        (display (string-append "\t" thing)))
+        (display (string-append "\t" (symbol->string thing))))
     (set! bean-counter (+ bean-counter 1))))
 
 (if (equal? ":" (cauda-draconis (program-arguments)))
@@ -33,7 +33,8 @@
     (display (string-append "\t" "Accidentals" "\n")))
   '())
 
-(define interim-catalog (member (cauda-draconis (program-arguments)) skeleton))
+(define interim-catalog
+  (member (string->symbol (cauda-draconis (program-arguments))) skeleton))
 
 (if interim-catalog
   (begin

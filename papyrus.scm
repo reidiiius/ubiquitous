@@ -9,9 +9,7 @@
 
 (define agglomerate
   (lambda ()
-    (begin
-      (for-each calligrapher skeleton)
-      (newline))))
+    (for-each calligrapher skeleton)))
 
 (define cauda-draconis
   (lambda (thing)
@@ -26,12 +24,9 @@
         (display (string-append "\t" (symbol->string thing))))
     (set! bean-counter (+ bean-counter 1))))
 
-(if (equal? ":" (cauda-draconis (program-arguments)))
-  (begin
+(when (equal? ":" (cauda-draconis (program-arguments)))
     (newline)
-    (agglomerate)
-    (display (string-append "\t" "Accidentals" "\n")))
-  '())
+    (agglomerate))
 
 (define interim-catalog
   (member (string->symbol (cauda-draconis (program-arguments))) skeleton))
@@ -42,7 +37,8 @@
     (calligrapher (car interim-catalog))
     (newline))
   (begin
+    (display "\n\tAccidentals\n\n")
+    (for-each carte-du-jour skeleton)
     (newline)
-    (for-each carte-du-jour skeleton) (newline)
     (newline)))
 
